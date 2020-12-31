@@ -1,6 +1,6 @@
 # This file contains and defines the supplyChainActor class.
 
-from Settings import (INITIAL_STOCK, INITIAL_CURRENT_ORDERS,
+from config import (INITIAL_STOCK, INITIAL_CURRENT_ORDERS,
                       INITIAL_COST, TARGET_STOCK, STORAGE_COST_PER_UNIT,
                       BACKORDER_PENALTY_COST_PER_UNIT)
 
