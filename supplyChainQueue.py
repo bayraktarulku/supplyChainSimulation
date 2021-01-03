@@ -7,5 +7,40 @@
 
 
 class SupplyChainQueue():
-    def __init__(self):
-        pass
+
+    def __init__(self, queueLength):
+        self.queueLength = queueLength
+        self.data = []
+
+        return
+
+
+    def PushEnvelope(self, numberOfCasesToOrder):
+        orderSuccessfullyPlaced = False
+
+        if len(self.data) < self.queueLength:
+            self.data.append(numberOfCasesToOrder)
+            orderSuccessfullyPlaced = True
+
+        return orderSuccessfullyPlaced
+
+
+    def AdvanceQueue(self):
+        self.data.pop(0)
+
+        return
+
+
+    def PopEnvelope(self):
+        if len(self.data) >= 1:
+            quantityDelivered = self.data[0]
+            self.AdvanceQueue()
+        else:
+            quantityDelivered = 0
+
+        return quantityDelivered
+
+
+    def PrettyPrint(self):
+        print(self.data)
+        return
