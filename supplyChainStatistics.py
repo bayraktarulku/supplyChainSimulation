@@ -65,5 +65,69 @@ class SupplyChainStatistics:
         self.distributorCostsOverTime.append(distributorCostsThisWeek)
         return
 
-    # def RecordFactoryCost(self, factoryCostsThisWeek):
-        # pass
+
+    def RecordFactoryCost(self, factoryCostsThisWeek):
+        self.factoryCostsOverTime.append(factoryCostsThisWeek)
+        return
+
+
+    def RecordRetailerEffectiveInventory(self, retailerEffectiveInventoryThisWeek):
+        self.retailerEffectiveInventoryOverTime.append(retailerEffectiveInventoryThisWeek)
+        return
+
+
+    def RecordWholesalerEffectiveInventory(self, wholesalerEffectiveInventoryThisWeek):
+        self.wholesalerEffectiveInventoryOverTime.append(wholesalerEffectiveInventoryThisWeek)
+        return
+
+
+    def RecordDistributorEffectiveInventory(self, distributorEffectiveInventoryThisWeek):
+        self.distributorEffectiveInventoryOverTime.append(distributorEffectiveInventoryThisWeek)
+        return
+
+
+    def RecordFactoryEffectiveInventory(self, factoryEffectiveInventoryThisWeek):
+        self.factoryEffectiveInventoryOverTime.append(factoryEffectiveInventoryThisWeek)
+        return
+
+
+    def PlotCosts(self):
+        plt.title("Cost Incurred Over Time")
+        plt.plot(self.retailerCostsOverTime, "r", label = "Retailer")
+        plt.plot(self.wholesalerCostsOverTime, "g", label = "Wholesaler")
+        plt.plot(self.distributorCostsOverTime, "b", label = "Distributor")
+        plt.plot(self.factoryCostsOverTime, "m", label="Factory")
+        plt.legend(loc='upper left', shadow=True)
+        plt.ylabel('Cost ($)')
+        plt.xlabel("Weeks")
+        plt.show()
+
+        return
+
+
+    def PlotOrders(self):
+        plt.title("Orders Placed Over Time")
+        plt.plot(self.retailerOrdersOverTime, "r", label = "Retailer")
+        plt.plot(self.wholesalerOrdersOverTime, "g", label = "Wholesaler")
+        plt.plot(self.distributorOrdersOverTime, "b", label = "Distributor")
+        plt.plot(self.factoryOrdersOverTime, "m", label="Factory")
+        plt.legend(loc='upper left', shadow=True)
+        plt.ylabel('Orders')
+        plt.xlabel("Weeks")
+        plt.show()
+
+        return
+
+
+    def PlotEffectiveInventory(self):
+        plt.title("Effective Inventory Over Time")
+        plt.plot(self.retailerEffectiveInventoryOverTime, "r", label = "Retailer")
+        plt.plot(self.wholesalerEffectiveInventoryOverTime, "g", label = "Wholesaler")
+        plt.plot(self.distributorEffectiveInventoryOverTime, "b", label = "Distributor")
+        plt.plot(self.factoryEffectiveInventoryOverTime, "m", label="Factory")
+        plt.legend(loc='upper left', shadow=True)
+        plt.ylabel('Effective Inventory')
+        plt.xlabel("Weeks")
+        plt.show()
+
+        return
